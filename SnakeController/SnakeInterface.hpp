@@ -2,6 +2,17 @@
 
 #include <cstdint>
 
+const std::uint32_t DIRECTION_IND_MSG = 0x10;
+const std::uint32_t TIMEOUT_IND_MSG = 0x20;
+const std::uint32_t DISPLAY_IND_MSG = 0x30;
+const std::uint32_t FOOD_IND_MSG = 0x40;
+const std::uint32_t FOOD_REQ_MSG = 0x41;
+const std::uint32_t FOOD_RESP_MSG = 0x42;
+const std::uint32_t SCORE_IND_MSG = 0x70;
+const std::uint32_t LOOSE_IND_MSG = 0x71;
+const std::uint32_t PAUSE_IND_MSG = 0x91;
+
+
 namespace Snake
 {
 
@@ -15,7 +26,7 @@ enum Direction
 
 struct DirectionInd
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x10;
+    static constexpr std::uint32_t MESSAGE_ID = DIRECTION_IND_MSG;
 
     Direction direction;
 };
@@ -23,7 +34,7 @@ struct DirectionInd
 
 struct TimeoutInd
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x20;
+    static constexpr std::uint32_t MESSAGE_ID = TIMEOUT_IND_MSG;
 };
 
 enum Cell
@@ -35,7 +46,7 @@ enum Cell
 
 struct DisplayInd
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x30;
+    static constexpr std::uint32_t MESSAGE_ID = DISPLAY_IND_MSG;
 
     int x;
     int y;
@@ -44,7 +55,7 @@ struct DisplayInd
 
 struct FoodInd
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x40;
+    static constexpr std::uint32_t MESSAGE_ID = FOOD_IND_MSG;
 
     int x;
     int y;
@@ -52,12 +63,12 @@ struct FoodInd
 
 struct FoodReq
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x41;
+    static constexpr std::uint32_t MESSAGE_ID = FOOD_REQ_MSG;
 };
 
 struct FoodResp
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x42;
+    static constexpr std::uint32_t MESSAGE_ID = FOOD_RESP_MSG;
 
     int x;
     int y;
@@ -65,17 +76,17 @@ struct FoodResp
 
 struct ScoreInd
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x70;
+    static constexpr std::uint32_t MESSAGE_ID = SCORE_IND_MSG;
 };
 
 struct LooseInd
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x71;
+    static constexpr std::uint32_t MESSAGE_ID = LOOSE_IND_MSG;
 };
 
 struct PauseInd
 {
-    static constexpr std::uint32_t MESSAGE_ID = 0x91;
+    static constexpr std::uint32_t MESSAGE_ID = PAUSE_IND_MSG;
 };
 
 } // namespace Snake
